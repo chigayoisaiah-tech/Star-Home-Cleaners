@@ -24,7 +24,8 @@ careIsNight: false,
   extras: {
   oven: 0,
   windows: 0,
-  walls: 0
+  walls: 0,
+  detergent: 0
 }
 };
 
@@ -115,7 +116,8 @@ const SERVICES = {
 const EXTRAS_PRICES = {
   oven: 150,
   windows: 150,
-  walls: 200
+  walls: 200,
+  detergent: 150
 };
 
 
@@ -368,7 +370,8 @@ setTimeout(() => {
 const extrasTotal =
   state.extras.oven * EXTRAS_PRICES.oven +
   state.extras.windows * EXTRAS_PRICES.windows +
-  state.extras.walls * EXTRAS_PRICES.walls;
+  state.extras.walls * EXTRAS_PRICES.walls +
+  state.extras.detergent * EXTRAS_PRICES.detergent;
 
 const total = baseTotal + extrasTotal;
 
@@ -406,6 +409,16 @@ if (extrasAllowed) {
         <button type="button" onclick="updateExtra('walls', -1)">−</button>
         <span>${state.extras.walls}</span>
         <button type="button" onclick="updateExtra('walls', 1)">+</button>
+
+        </div>
+    </div>
+
+    <div class="cart-item">
+      <span>Detergents Needed</span>
+      <div class="qty">
+        <button type="button" onclick="updateExtra('detergent', -1)">−</button>
+        <span>${state.extras.detergent}</span>
+        <button type="button" onclick="updateExtra('detergent', 1)">+</button>    
         
       </div>
     </div>
