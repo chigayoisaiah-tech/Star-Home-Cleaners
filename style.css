@@ -144,9 +144,9 @@ body {
     display: flex;
   }
 
-  .btn-primary {
-    display: none;
-  }
+  .nav .btn-primary {
+  display: none;
+}
 
   .mobile-menu.open {
     display: flex;
